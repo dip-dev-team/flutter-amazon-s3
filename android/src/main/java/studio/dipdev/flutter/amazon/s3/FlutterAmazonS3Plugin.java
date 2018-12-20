@@ -16,7 +16,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 public class FlutterAmazonS3Plugin implements MethodCallHandler, AwsHelper.OnUploadCompleteListener {
   AwsHelper awsHelper;
-
+  Context context;
   public static void registerWith(PluginRegistry.Registrar registrar) {
     MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_amazon_s3");
     FlutterAmazonS3Plugin instance = new FlutterAmazonS3Plugin(registrar.context());
@@ -24,7 +24,7 @@ public class FlutterAmazonS3Plugin implements MethodCallHandler, AwsHelper.OnUpl
   }
 
   private FlutterAmazonS3Plugin(Context context) {
-    awsHelper = new AwsHelper(context, this);
+    this.context = context;
   }
 
   @Override
@@ -36,7 +36,8 @@ public class FlutterAmazonS3Plugin implements MethodCallHandler, AwsHelper.OnUpl
     if (call.method.equals("uploadImageToAmazon")) {
       File file = new File(filePath);
       try {
-        uploadedUrl = awsHelper.uploadImage(file, bucket, identity);
+        awsHelper = new AwsHelper(context, this, bucket, identity);
+        uploadedUrl = awsHelper.uploadImage(file);
       } catch (UnsupportedEncodingException e) {
         e.printStackTrace();
       }

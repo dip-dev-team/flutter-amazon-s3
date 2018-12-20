@@ -17,13 +17,18 @@ import java.io.File
 import java.io.UnsupportedEncodingException
 import java.util.Locale
 
-class AwsHelper(context: Context, private val onUploadCompleteListener: OnUploadCompleteListener) {
+class AwsHelper( val context: Context, private val onUploadCompleteListener: OnUploadCompleteListener, val BUCKET_NAME: String, val IDENTITY_POOL_ID: String) {
 
-    String BUCKET_NAME = ""
-    String IDENTITY_POOL_ID = ""
-
-    private val transferUtility: TransferUtility
+    private var transferUtility: TransferUtility
     private var nameOfUploadedFile: String? = null
+
+    init {
+        val credentialsProvider = CognitoCachingCredentialsProvider(context, IDENTITY_POOL_ID, Regions.US_EAST_1)
+
+        val amazonS3Client = AmazonS3Client(credentialsProvider)
+        amazonS3Client.setRegion(com.amazonaws.regions.Region.getRegion(Regions.US_EAST_1))
+        transferUtility = TransferUtility(amazonS3Client, context)
+    }
 
     private val uploadedUrl: String
         get() = getUploadedUrl(nameOfUploadedFile)
@@ -33,10 +38,7 @@ class AwsHelper(context: Context, private val onUploadCompleteListener: OnUpload
     }
 
     @Throws(UnsupportedEncodingException::class)
-    fun uploadImage(image: File, bucket: String, identity: String): String {
-         BUCKET_NAME = bucket
-         IDENTITY_POOL_ID = identity
-
+    fun uploadImage(image: File): String {
         val credentialsProvider = CognitoCachingCredentialsProvider(context, IDENTITY_POOL_ID, Regions.US_EAST_1)
 
         val amazonS3Client = AmazonS3Client(credentialsProvider)

@@ -15,7 +15,7 @@ Use this package as a library
 Add this to your package's pubspec.yaml file:
 
 dependencies:
-  flutter_amazon_s3: ^0.0.1
+  flutter_amazon_s3: ^0.0.6
 
 2. Install it
 

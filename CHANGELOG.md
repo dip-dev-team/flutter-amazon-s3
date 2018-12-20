@@ -17,3 +17,7 @@
 ## 0.0.5
 
  - Fixes android code.....
+
+## 0.0.6
+
+ - Android version works as well, testing IOS

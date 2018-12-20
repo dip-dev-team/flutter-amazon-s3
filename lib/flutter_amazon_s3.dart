@@ -10,8 +10,8 @@ class FlutterAmazonS3 {
     final Map<String, dynamic> params = <String, dynamic>{
       'filePath': filepath,
     };
-    final String version =
+    final String imagePath =
         await _channel.invokeMethod('uploadImageToAmazon', params);
-    return version;
+    return imagePath;
   }
 }

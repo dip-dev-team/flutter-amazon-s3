@@ -1,8 +1,6 @@
-package studio.dipdev.flutter.amazon.s3;
+package com.flutteramazons3;
 
 import android.content.Context;
-
-import com.flutteramazons3.AwsHelper;
 
 import org.jetbrains.annotations.NotNull;
 

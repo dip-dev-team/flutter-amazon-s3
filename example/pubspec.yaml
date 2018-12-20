@@ -19,4 +19,9 @@ dev_dependencies:
     path: ../
 
 flutter:
+
+  plugin:
+    androidPackage: com.flutteramazons3
+    pluginClass: FlutterAmazonS3Plugin
+
   uses-material-design: true

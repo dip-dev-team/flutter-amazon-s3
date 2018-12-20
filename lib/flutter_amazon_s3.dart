@@ -6,9 +6,12 @@ class FlutterAmazonS3 {
   static const MethodChannel _channel =
       const MethodChannel('flutter_amazon_s3');
 
-  static Future<String> uploadImage(String filepath) async {
+  static Future<String> uploadImage(
+      String filepath, String bucket, String identity) async {
     final Map<String, dynamic> params = <String, dynamic>{
       'filePath': filepath,
+      'bucket': bucket,
+      'identity': identity,
     };
     final String imagePath =
         await _channel.invokeMethod('uploadImageToAmazon', params);

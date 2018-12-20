@@ -1,4 +1,4 @@
-package com.flutteramazons3
+package studio.dipdev.flutter.amazon.s3
 
 import android.content.Context
 import android.content.Intent
@@ -19,26 +19,30 @@ import java.util.Locale
 
 class AwsHelper(context: Context, private val onUploadCompleteListener: OnUploadCompleteListener) {
 
+    String BUCKET_NAME = ""
+    String IDENTITY_POOL_ID = ""
+
     private val transferUtility: TransferUtility
     private var nameOfUploadedFile: String? = null
 
     private val uploadedUrl: String
         get() = getUploadedUrl(nameOfUploadedFile)
 
-    init {
-        val credentialsProvider = CognitoCachingCredentialsProvider(context, IDENTITY_POOL_ID, Regions.US_EAST_1)
-
-        val amazonS3Client = AmazonS3Client(credentialsProvider)
-        amazonS3Client.setRegion(com.amazonaws.regions.Region.getRegion(Regions.US_EAST_1))
-        transferUtility = TransferUtility(amazonS3Client, context)
-    }
-
     private fun getUploadedUrl(key: String?): String {
         return String.format(Locale.getDefault(), URL_TEMPLATE, BUCKET_NAME, key)
     }
 
     @Throws(UnsupportedEncodingException::class)
-    fun uploadImage(image: File): String {
+    fun uploadImage(image: File, bucket: String, identity: String): String {
+         BUCKET_NAME = bucket
+         IDENTITY_POOL_ID = identity
+
+        val credentialsProvider = CognitoCachingCredentialsProvider(context, IDENTITY_POOL_ID, Regions.US_EAST_1)
+
+        val amazonS3Client = AmazonS3Client(credentialsProvider)
+        amazonS3Client.setRegion(com.amazonaws.regions.Region.getRegion(Regions.US_EAST_1))
+        transferUtility = TransferUtility(amazonS3Client, context)
+
         nameOfUploadedFile = clean(image.name)
         val transferObserver = transferUtility.upload(BUCKET_NAME, nameOfUploadedFile, image)
 
@@ -72,9 +76,6 @@ class AwsHelper(context: Context, private val onUploadCompleteListener: OnUpload
 
     companion object {
         private val TAG = AwsHelper::class.java.simpleName
-
-        private const val BUCKET_NAME = "find-images"
-        private const val IDENTITY_POOL_ID = "us-east-1:ffa41a0d-f4fb-425a-b23b-31c14476f95f"
         private const val URL_TEMPLATE = "https://s3.amazonaws.com/%s/%s"
     }
 }

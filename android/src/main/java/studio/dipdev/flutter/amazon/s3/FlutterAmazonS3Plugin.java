@@ -1,4 +1,4 @@
-package com.flutteramazons3;
+package studio.dipdev.flutter.amazon.s3;
 
 import android.content.Context;
 
@@ -30,11 +30,13 @@ public class FlutterAmazonS3Plugin implements MethodCallHandler, AwsHelper.OnUpl
   @Override
   public void onMethodCall(MethodCall call, Result result) {
     String filePath = call.argument("filePath");
+    String bucket = call.argument("bucket");
+    String identity = call.argument("identity");
     String uploadedUrl = "";
     if (call.method.equals("uploadImageToAmazon")) {
       File file = new File(filePath);
       try {
-        uploadedUrl = awsHelper.uploadImage(file);
+        uploadedUrl = awsHelper.uploadImage(file, bucket, identity);
       } catch (UnsupportedEncodingException e) {
         e.printStackTrace();
       }

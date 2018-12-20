@@ -14,9 +14,11 @@ public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
         if(call.method.elementsEqual("uploadImageToAmazon")){
             let arguments = call.arguments as? NSDictionary
             let imagePath = arguments!["filePath"] as? String
-            
+            let bucket = arguments!["bucket"] as? String
+            let identity = arguments!["identity"] as? String
+
             var imageAmazonUrl = ""
-            let S3BucketName = "find-images"
+            let S3BucketName = bucket
             let fileUrl = NSURL(fileURLWithPath: imagePath!)
             
             let uploadRequest = AWSS3TransferManagerUploadRequest()
@@ -28,7 +30,7 @@ public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
             
             let credentialsProvider = AWSCognitoCredentialsProvider(
                 regionType: AWSRegionType.USEast1,
-                identityPoolId: "us-east-1:ffa41a0d-f4fb-425a-b23b-31c14476f95f")
+                identityPoolId: identity)
             let configuration = AWSServiceConfiguration(
                 region: AWSRegionType.USEast1,
                 credentialsProvider: credentialsProvider)

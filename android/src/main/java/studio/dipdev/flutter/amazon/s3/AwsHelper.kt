@@ -17,7 +17,7 @@ import java.io.File
 import java.io.UnsupportedEncodingException
 import java.util.Locale
 
-class AwsHelper( val context: Context, private val onUploadCompleteListener: OnUploadCompleteListener, val BUCKET_NAME: String, val IDENTITY_POOL_ID: String) {
+class AwsHelper(private val context: Context, private val onUploadCompleteListener: OnUploadCompleteListener, private val BUCKET_NAME: String, private val IDENTITY_POOL_ID: String) {
 
     private var transferUtility: TransferUtility
     private var nameOfUploadedFile: String? = null

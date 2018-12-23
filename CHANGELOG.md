@@ -21,3 +21,12 @@
 ## 0.0.6
 
  - Android version works as well, testing IOS
+ 
+## 0.0.7
+ 
+ - Android version works as well. Next step - IOS
+ 
+## 0.0.8
+ 
+ - IOS version works as well. Added Documentation.
+

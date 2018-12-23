@@ -29,4 +29,8 @@
 ## 0.0.8
  
  - IOS version works as well. Added Documentation.
+ 
+## 0.0.9
+
+ - Some fixes in docs
 

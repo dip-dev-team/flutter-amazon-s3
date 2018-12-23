@@ -10,7 +10,7 @@ To use this plugin, add `flutter_amazon_s3` as a [dependency in your pubspec.yam
 
 ```yaml
 dependencies:
-  flutter_amazon_s3: '^0.0.8'
+  flutter_amazon_s3: '^0.0.9'
 ```
 
 ### Example
@@ -20,7 +20,7 @@ dependencies:
 import 'package:flutter_amazon_s3/flutter_amazon_s3.dart';
 
 String uploadedImageUrl = await FlutterAmazonS3.uploadImage(
-          _image.path, findApi.BUCKET_NAME, findApi.IDENTITY_POOL_ID);
+          _image.path, BUCKET_NAME, IDENTITY_POOL_ID);
 ```
           
 ## Installation
@@ -36,6 +36,7 @@ No configuration required - the plugin should work out of the box.
 No configuration required - the plugin should work out of the box.          
 
 ### Authors
-
+```
 Android version written by Tony Darko
 IOS version written by Vladislav Blago
+```

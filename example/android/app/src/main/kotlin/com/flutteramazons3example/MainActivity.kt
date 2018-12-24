@@ -1,4 +1,4 @@
-package studio.dipdev.flutteramazons3example
+package com.flutteramazons3example
 
 import android.os.Bundle
 

@@ -4,9 +4,9 @@
 Pod::Spec.new do |s|
   s.name             = 'flutter_amazon_s3'
   s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.summary          = 'A new Flutter to connect Amazon S3.'
   s.description      = <<-DESC
-A new flutter plugin project.
+A new Flutter to connect Amazon S3.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
@@ -15,6 +15,8 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
+  s.dependency 'AWSS3'
+  s.dependency 'AWSCore'
 
   s.ios.deployment_target = '8.0'
 end

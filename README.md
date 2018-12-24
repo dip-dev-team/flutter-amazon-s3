@@ -1,14 +1,42 @@
 # flutter_amazon_s3
 
-A new flutter plugin project.
+Amazon S3 plugin for Flutter
 
-## Getting Started
+Unofficial Amazon S3 plugin written in Dart for Flutter.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.io/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Usage
+To use this plugin, add `flutter_amazon_s3` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+
+```yaml
+dependencies:
+  flutter_amazon_s3: '^0.0.9'
+```
+
+### Example
+
+
+``` dart
+import 'package:flutter_amazon_s3/flutter_amazon_s3.dart';
+
+String uploadedImageUrl = await FlutterAmazonS3.uploadImage(
+          _image.path, BUCKET_NAME, IDENTITY_POOL_ID);
+```
+          
+## Installation
+
+
+### Android
+
+No configuration required - the plugin should work out of the box.          
+
+
+### iOS
+
+No configuration required - the plugin should work out of the box.          
+
+### Authors
+```
+Android version written by Tony Darko
+IOS version written by Vladislav Blago
+```

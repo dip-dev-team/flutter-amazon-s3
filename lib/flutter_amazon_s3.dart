@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'region.dart';
 
 import 'package:flutter/services.dart';
 
@@ -15,6 +16,33 @@ class FlutterAmazonS3 {
     };
     final String imagePath =
         await _channel.invokeMethod('uploadImageToAmazon', params);
+    return imagePath;
+  }
+
+  static Future<String> upload(String filepath, String bucket, String identity,
+      String imageName, Region region, Region subRegion) async {
+    final Map<String, dynamic> params = <String, dynamic>{
+      'filePath': filepath,
+      'bucket': bucket,
+      'identity': identity,
+      'imageName': imageName,
+      'region': region,
+      'subRegion': subRegion
+    };
+    final String imagePath = await _channel.invokeMethod('uploadImage', params);
+    return imagePath;
+  }
+
+  static Future<String> delete(String bucket, String identity, String imageName,
+      Region region, Region subRegion) async {
+    final Map<String, dynamic> params = <String, dynamic>{
+      'bucket': bucket,
+      'identity': identity,
+      'imageName': imageName,
+      'region': region,
+      'subRegion': subRegion
+    };
+    final String imagePath = await _channel.invokeMethod('deleteImage', params);
     return imagePath;
   }
 }

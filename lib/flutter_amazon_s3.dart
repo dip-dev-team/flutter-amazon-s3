@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'region.dart';
+import 'aws_region.dart';
 
 import 'package:flutter/services.dart';
 

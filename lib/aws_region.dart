@@ -1,4 +1,4 @@
-class Region {
+class AwsRegion {
   static const AP_NORTHEAST_1 = "AP_NORTHEAST_1";
   static const AP_NORTHEAST_2 = "AP_NORTHEAST_2";
   static const AP_SOUTH_1 = "AP_SOUTH_1";

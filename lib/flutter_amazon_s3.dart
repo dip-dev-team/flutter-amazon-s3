@@ -20,7 +20,7 @@ class FlutterAmazonS3 {
   }
 
   static Future<String> upload(String filepath, String bucket, String identity,
-      String imageName, Region region, Region subRegion) async {
+      String imageName, String region, String subRegion) async {
     final Map<String, dynamic> params = <String, dynamic>{
       'filePath': filepath,
       'bucket': bucket,
@@ -34,7 +34,7 @@ class FlutterAmazonS3 {
   }
 
   static Future<String> delete(String bucket, String identity, String imageName,
-      Region region, Region subRegion) async {
+      String region, String subRegion) async {
     final Map<String, dynamic> params = <String, dynamic>{
       'bucket': bucket,
       'identity': identity,

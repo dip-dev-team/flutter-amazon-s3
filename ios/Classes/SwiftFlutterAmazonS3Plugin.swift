@@ -4,12 +4,18 @@ import AWSS3
 import AWSCore
 
 public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
+
+    var region1:AWSRegionType = AWSRegionType.USEast1
+    var subRegion1:AWSRegionType = AWSRegionType.EUWest1
+
+
+
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "flutter_amazon_s3", binaryMessenger: registrar.messenger())
         let instance = SwiftFlutterAmazonS3Plugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         if(call.method.elementsEqual("uploadImageToAmazon")){
             let arguments = call.arguments as? NSDictionary
@@ -54,7 +60,7 @@ public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
               deleteImage(call,result: result)
         }
     }
-    
+
     public func nameGenerator() -> String{
         let date = Date()
         let formatter = DateFormatter()
@@ -62,9 +68,6 @@ public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
         let result = formatter.string(from: date)
         return "IMG" + result + String(Int64(date.timeIntervalSince1970 * 1000)) + "jpeg"
     }
-
-     var region1:AWSRegionType = AWSRegionType.USEast1
-     var subRegion1:AWSRegionType = AWSRegionType.EUWest1
 
 
         func uploadImageForRegion(_ call: FlutterMethodCall, result: @escaping FlutterResult){
@@ -128,6 +131,7 @@ public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
             let region = arguments!["region"] as? String
             let subRegion = arguments!["subRegion"] as? String
 
+
             if(region != nil && subRegion != nil){
                 initRegions(region: region!, subRegion: subRegion!)
             }
@@ -158,6 +162,11 @@ public class SwiftFlutterAmazonS3Plugin: NSObject, FlutterPlugin {
 
 
         }
+
+    public func initRegions(region:String,subRegion:String){
+        region1 = getRegion(name: region)
+        subRegion1 = getRegion(name: subRegion)
+    }
 
     public func getRegion( name:String ) -> AWSRegionType{
 

@@ -24,7 +24,7 @@ String uploadedImageUrl = await FlutterAmazonS3.uploadImage(
           _image.path, BUCKET_NAME, IDENTITY_POOL_ID);
           
 
-
+Use the below code to specify the region and sub region for image upload
 String uploadedImageUrl = await FlutterAmazonS3.upload(
             uploadImageData.file.path,
             Configuration.LEAVE_REQUEST_BUCKET,

@@ -18,9 +18,24 @@ dependencies:
 
 ``` dart
 import 'package:flutter_amazon_s3/flutter_amazon_s3.dart';
+import 'package:flutter_amazon_s3/aws_region.dart';
 
 String uploadedImageUrl = await FlutterAmazonS3.uploadImage(
           _image.path, BUCKET_NAME, IDENTITY_POOL_ID);
+          
+
+
+String uploadedImageUrl = await FlutterAmazonS3.upload(
+            uploadImageData.file.path,
+            Configuration.LEAVE_REQUEST_BUCKET,
+            Configuration.IDENTITY_POOL_ID,
+            uploadImageData.imageName,
+            AwsRegion.US_EAST_1,
+            AwsRegion.AP_SOUTHEAST_1)
+            
+            
+        
+
 ```
           
 ## Installation

@@ -47,8 +47,8 @@ class AwsRegionHelper(private val context: Context, private val onUploadComplete
 
     private fun initRegion(){
 
-        region1 = getRegion(REGION);
-        subRegion1 = getRegion(SUB_REGION);
+        region1 = getRegionFor(REGION);
+        subRegion1 = getRegionFor(SUB_REGION);
 
     }
 
@@ -119,7 +119,7 @@ class AwsRegionHelper(private val context: Context, private val onUploadComplete
         private const val URL_TEMPLATE = "https://s3.amazonaws.com/%s/%s"
     }
 
-    fun getRegion(name:String):Regions{
+    fun getRegionFor(name:String):Regions{
 
         if(name == "US_EAST_1"){
             return Regions.US_EAST_1

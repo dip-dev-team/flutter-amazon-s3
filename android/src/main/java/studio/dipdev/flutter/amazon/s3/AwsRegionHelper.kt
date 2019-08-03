@@ -119,45 +119,45 @@ class AwsRegionHelper(private val context: Context, private val onUploadComplete
         private const val URL_TEMPLATE = "https://s3.amazonaws.com/%s/%s"
     }
 
-    fun getRegionFor(name:String):Regions{
+    private fun getRegionFor(name:String):Regions{
 
-        if(name == "US_EAST_1"){
+        if(name.equals("US_EAST_1")){
             return Regions.US_EAST_1
-        }else if(name == "AP_SOUTHEAST_1"){
+        }else if(name.equals("AP_SOUTHEAST_1")){
             return Regions.AP_SOUTHEAST_1
-        }else if(name == "US_EAST_2"){
+        }else if(name.equals("US_EAST_2")){
             return Regions.US_EAST_2
-        }else if(name == "EU_WEST_1"){
+        }else if(name.equals("EU_WEST_1")){
             return Regions.EU_WEST_1
-        }else if(name == "CA_CENTRAL_1"){
+        }else if(name.equals("CA_CENTRAL_1")){
             return Regions.CA_CENTRAL_1
-        }else if(name == "CN_NORTH_1"){
+        }else if(name.equals("CN_NORTH_1")){
             return Regions.CN_NORTH_1
-        } else if(name == "CN_NORTHWEST_1"){
+        } else if(name.equals("CN_NORTHWEST_1")){
             return Regions.CN_NORTHWEST_1
-        }else if(name == "EU_CENTRAL_1"){
+        }else if(name.equals("EU_CENTRAL_1")){
             return Regions.EU_CENTRAL_1
-        } else if(name == "EU_WEST_2"){
+        } else if(name.equals("EU_WEST_2")){
             return Regions.EU_WEST_2
-        }else if(name == "EU_WEST_3"){
+        }else if(name.equals("EU_WEST_3")){
             return Regions.EU_WEST_3
-        } else if(name == "SA_EAST_1"){
+        } else if(name.equals("SA_EAST_1")){
             return Regions.SA_EAST_1
-        } else if(name == "US_WEST_1"){
+        } else if(name.equals("US_WEST_1")){
             return Regions.US_WEST_1
-        }else if(name == "US_WEST_2"){
+        }else if(name.equals("US_WEST_2")){
             return Regions.US_WEST_2
-        } else if(name == "AP_NORTHEAST_1"){
+        } else if(name.equals("AP_NORTHEAST_1")){
             return Regions.AP_NORTHEAST_1
-        } else if(name == "AP_NORTHEAST_2"){
+        } else if(name.equals("AP_NORTHEAST_2")){
             return Regions.AP_NORTHEAST_2
-        } else if(name == "AP_SOUTHEAST_1"){
+        } else if(name.equals("AP_SOUTHEAST_1")){
             return Regions.AP_SOUTHEAST_1
-        }else if(name == "AP_SOUTHEAST_2"){
+        }else if(name.equals("AP_SOUTHEAST_2")){
             return Regions.AP_SOUTHEAST_2
-        } else if(name == "AP_SOUTH_1"){
+        } else if(name.equals("AP_SOUTH_1")){
             return Regions.GovCloud
-        }else if(name == "AP_SOUTH_1"){
+        }else if(name.equals("AP_SOUTH_1")){
             return Regions.GovCloud
         }
 

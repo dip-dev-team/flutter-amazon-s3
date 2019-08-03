@@ -33,6 +33,14 @@ String uploadedImageUrl = await FlutterAmazonS3.upload(
             AwsRegion.US_EAST_1,
             AwsRegion.AP_SOUTHEAST_1)
             
+//use below code to delete an image
+ String result = FlutterAmazonS3.delete(
+            BUCKET_NAME,
+            IDENTITY_POOL_ID,
+            IMAGE_NAME,
+            AwsRegion.US_EAST_1,
+            AwsRegion.AP_SOUTHEAST_1)
+            
             
         
 

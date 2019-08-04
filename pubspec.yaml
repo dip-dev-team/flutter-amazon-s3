@@ -2,6 +2,7 @@ name: flutter_amazon_s3
 description: A flutter plugin for using Amazon S3 service.
 version: 0.1.6
 author: DipDev Studio <info@dipdev.studio>
+        fäm properties<no-reply@famproperties.com>
 homepage: https://git.dipdev.studio/open-source/flutter/AmazonS3
 
 environment:

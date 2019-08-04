@@ -33,4 +33,12 @@
 ## 0.0.9
 
  - Some fixes in docs
+ 
+## 0.1.6
+
+ - Added new methods that allow image upload by specifying both region and sub-region. This is helpful when region and sub-Region are not same.
+ - Added new dart class that keeps Region string.
+ - Added method to delete the images.
+ 
+ 
 

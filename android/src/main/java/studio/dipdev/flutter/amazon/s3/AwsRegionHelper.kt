@@ -42,7 +42,7 @@ class AwsRegionHelper(private val context: Context, private val onUploadComplete
         get() = getUploadedUrl(nameOfUploadedFile)
 
     private fun getUploadedUrl(key: String?): String {
-        return "https://"+region1.getName()+".amazonaws.com/"+BUCKET_NAME+"/"+key
+        return "https://s3-"+subRegion1.getName()+".amazonaws.com/"+BUCKET_NAME+"/"+key
         //return  ""+key
     }
 

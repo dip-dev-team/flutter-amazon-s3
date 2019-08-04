@@ -62,5 +62,5 @@ No configuration required - the plugin should work out of the box.
 ```
 Android version written by Tony Darko
 IOS version written by Vladislav Blago
-IOS and Andorid Plugins are updated  by fam-properties to enable image iupload and delete using region and sub-region
+IOS and Android Plugins are modified by fäm properties to enable image upload and delete using region and sub-region
 ```

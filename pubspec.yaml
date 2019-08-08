@@ -1,4 +1,4 @@
-name: image_uploader_amazon_s3
+name: flutter_amazon_s3
 description: A flutter plugin for using Amazon S3 service.
 version: 0.1.7
 author: DipDev Studio <info@dipdev.studio>

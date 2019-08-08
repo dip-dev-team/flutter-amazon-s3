@@ -64,8 +64,8 @@ class AwsRegionHelper(private val context: Context, private val onUploadComplete
         amazonS3Client.setRegion(com.amazonaws.regions.Region.getRegion(subRegion1))
         Thread(Runnable{
             amazonS3Client.deleteObject(BUCKET_NAME, IMAGE_NAME)
-            onUploadCompleteListener.onUploadComplete("Success")
         }).start()
+        onUploadCompleteListener.onUploadComplete("Success")
         return IMAGE_NAME
 
     }

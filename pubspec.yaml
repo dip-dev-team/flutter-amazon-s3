@@ -1,9 +1,10 @@
-name: flutter_amazon_s3
+name: amazon_s3_cognito
 description: A flutter plugin for using Amazon S3 service.
-version: 0.1.7
-author: DipDev Studio <info@dipdev.studio>
-        fäm properties<no-reply@famproperties.com>
-homepage: https://git.dipdev.studio/open-source/flutter/AmazonS3
+version: 0.1.0
+author: fäm properties<no-reply@famproperties.com>
+        DipDev Studio <info@dipdev.studio>
+
+homepage: https://github.com/prachiFam/flutter-amazon-s3
 
 environment:
   sdk: ">=2.0.0 <3.0.0"

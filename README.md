@@ -1,24 +1,30 @@
-# flutter_amazon_s3
+# amazon_s3_cognito
 
 Amazon S3 plugin for Flutter
 
 Unofficial Amazon S3 plugin written in Dart for Flutter.
 
+The plugin is extension if flutter-amazon-s3 plugin which can be found here 
+https://pub.dev/packages/flutter_amazon_s3. This plugin adds image delete functionality and also
+it allows user to upload image when region and sub-region are different.
+
+Plugin in maintained by fäm properties<no-reply@famproperties.com>.
+
 ## Usage
-To use this plugin, add `flutter_amazon_s3` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+To use this plugin, add `amazon_s3_cognito` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
 
 ```yaml
 dependencies:
-  flutter_amazon_s3: '^0.0.9'
+  amazon_s3_cognito: '^0.0.9'
 ```
 
 ### Example
 
 
 ``` dart
-import 'package:flutter_amazon_s3/flutter_amazon_s3.dart';
-import 'package:flutter_amazon_s3/aws_region.dart';
+import 'package:amazon_s3_cognito/flutter_amazon_s3.dart';
+import 'package:amazon_s3_cognito/aws_region.dart';
 
 String uploadedImageUrl = await FlutterAmazonS3.uploadImage(
           _image.path, BUCKET_NAME, IDENTITY_POOL_ID);
@@ -60,7 +66,7 @@ No configuration required - the plugin should work out of the box.
 
 ### Authors
 ```
+IOS and Android Plugins are modified by fäm properties to enable image upload and delete using region and sub-region. 
 Android version written by Tony Darko
 IOS version written by Vladislav Blago
-IOS and Android Plugins are modified by fäm properties to enable image upload and delete using region and sub-region
 ```

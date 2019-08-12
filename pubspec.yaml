@@ -1,5 +1,5 @@
 name: amazon_s3_cognito
-description: A flutter plugin for using Amazon S3 service.
+description: A flutter plugin for using Amazon S3 service.The plugin allows user to upload and delete images on amazon s3 cognito.
 version: 0.1.0
 author: fäm properties<no-reply@famproperties.com>
         DipDev Studio <info@dipdev.studio>

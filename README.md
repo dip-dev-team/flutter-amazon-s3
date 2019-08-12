@@ -16,7 +16,7 @@ To use this plugin, add `amazon_s3_cognito` as a [dependency in your pubspec.yam
 
 ```yaml
 dependencies:
-  amazon_s3_cognito: '^0.0.9'
+  amazon_s3_cognito: '^0.1.0'
 ```
 
 ### Example

@@ -1,36 +1,11 @@
 ## 0.0.1
 
- - Init with basic functional for Android and IOS
+ -  - Added new methods that allow image upload by specifying both region and sub-region. This is helpful for image upload when region and sub-Region are not same.
+    - Added new dart class that keeps Region string.
+    - Added method to delete the images.
+## 0.0.1 
+    - Improving package health.
+    - Adding more discription
 
-## 0.0.2
-
- - Try to correct configuration
-
-## 0.0.3
-
- - Try to correct configuration 2
-
-## 0.0.4
-
- - Make code a little universal
-
-## 0.0.5
-
- - Fixes android code.....
-
-## 0.0.6
-
- - Android version works as well, testing IOS
  
-## 0.0.7
- 
- - Android version works as well. Next step - IOS
- 
-## 0.0.8
- 
- - IOS version works as well. Added Documentation.
- 
-## 0.0.9
-
- - Some fixes in docs
 
